@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vegas Vacation VIP</title>
+
+    <meta name="description" content="">
+    <meta name="robots" content="">
+    <link rel="canonical" href="" />
+
+    <link rel="shortcut icon" href="~/images/icon/favicon.ico">
+
+    <!-- core CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/animate.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="~/js/html5shiv.js"></script>
+    <script src="~/js/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="~/css/colorbox.css" />
+    <link rel="stylesheet" href="~/css/lightbox.css" type="text/css" media="screen" />
+
+    <link href="~/css/layout_style.css" rel="stylesheet" type="text/css">
+    <link href="~/fonts/font_style.css" rel="stylesheet" type="text/css">
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <!--menu js-->
+    <script src="~/js/menu.js" type="text/javascript"></script>
+
+    <!--slider js-->
+
+
+    <!--<script src="js/jquery.colorbox.js" type="text/javascript" ></script>-->
+
+    <script class="secret-source">
+        // You can also use "$(window).load(function() {"
+        $(function () {
+
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+
+        jQuery(document).ready(function ($) {
+
+
+            //Examples of how to assign the Colorbox event to elements
+            //$(".group1").colorbox({rel:'group1'});
+            //$(".group2").colorbox({rel:'group2', transition:"fade"});
+            //$(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+            //$(".group4").colorbox({rel:'group4', slideshow:true});
+            //$(".ajax").colorbox();
+            //$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+            //$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+            //$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+            //$(".inline").colorbox({inline:true, width:"50%"});
+            $(".callbacks").colorbox({
+                //	onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+                //	onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+                //	onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+                //	onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+                //	onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+            });
+
+            $('.non-retina').colorbox({ rel: 'group5', transition: 'none' })
+            $('.retina').colorbox({ rel: 'group5', transition: 'none', retinaImage: true, retinaUrl: true });
+
+            //Example of preserving a JavaScript event for inline calls.
+            $("#click").click(function () {
+                $('#click').css({ "background-color": "#f00", "color": "#fff", "cursor": "inherit" }).text("Open this window again and this message will still be here.");
+                return false;
+            });
+
+
+
+            // Make ColorBox responsive
+            jQuery.colorbox.settings.maxWidth = '95%';
+            jQuery.colorbox.settings.maxHeight = '95%';
+
+            var resizeTimer;
+            function resizeColorBox() {
+                if (resizeTimer) clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function () {
+                    if (jQuery('#cboxOverlay').is(':visible')) {
+                        jQuery.colorbox.load(true);
+                    }
+                }, 300);
+            }
+
+            jQuery(window).resize(resizeColorBox);
+            window.addEventListener("orientationchange", resizeColorBox, false);
+
+        });
+    </script>
+
+
+    <script src="~/js/jquery.shiningImage.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('h2').textEffect('slide'); $('#vegas1').textEffect('fade'); $('#vegas2').textEffect('grow'); $('#vegas3').textEffect({
+                effect: 'jumble', effectSpeed: 150, completionSpeed: 6000, jumbleColor: '#7f7f7f'
+            });
+            $('#vegas4').textEffect('slide');
+            $('#vegas5').textEffect('dropdown');
+        });
+    </script>
+
+    <script>
+        $(window).load(function () {
+            $('#demo1').shiningImage(); $('#vegas2').shiningImage({
+                direction: 'x', color: '#FFFFFF', opacity: 1, scale: 0.7, speed: 80, delay: 3000
+            });
+            $('#vegas3').shiningImage({ color: '#75FF85', opacity: 0.1 });
+            $('#vegas4').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas6').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas7').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas8').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas9').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas10').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas11').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas12a').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas12b').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas12c').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas12d').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas12e').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas13a').shiningImage({ color: '#d58bff', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas13b').shiningImage({ color: '#d58bff', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas13c').shiningImage({ color: '#d58bff', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas13d').shiningImage({ color: '#d58bff', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas13e').shiningImage({ color: '#d58bff', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas14').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas15').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+            $('#vegas5').shiningImage({ color: '#FFFFFF', opacity: 1, speed: 150, delay: 3000 });
+        });
+    </script>
+
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('h2').textEffect('slide'); $('#vegas1').textEffect('fade'); $('#vegas2').textEffect('grow'); $('#vegas3').textEffect({
+                effect: 'jumble', effectSpeed: 150, completionSpeed: 6000, jumbleColor: '#7f7f7f'
+            });
+            $('#vegas4').textEffect('slide');
+            $('#vegas5').textEffect('dropdown');
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        //]]>
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+<!--/head-->
+<body>
+    <header class="header_part navbar-fixed-top">
+        <div class="top_part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                        <div class="topbar_contact_info"><a href="tel:+8004198000">(800) 419-8000</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--navigation part-->
+        <section class="navigation_part">
+            <div class="navigation_container">
+                <div class="container">
+                    <div class="mainWrap">
+                        <a id="touch-menu" class="mobile-menu" href="#"><i class="icon-reorder"></i>Navigation</a>
+                        <nav>
+                            <ul class="menu">
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Home" asp-action="Package">Package</a></li>
+                                <li><a asp-controller="Home" asp-action="Hotels">Hotels</a></li>
+                                <li><a asp-controller="Home" asp-action="Gifts">Gifts</a></li>
+                                <li><a asp-controller="Home" asp-action="Package">What's the Catch?</a></li>
+                                <li><a asp-controller="Home" asp-action="Package">Concierge</a></li>
+                                <li><a asp-controller="Home" asp-action="Package">Travel Show</a></li>
+                                <li><a asp-controller="Home" asp-action="Package">Buy Now</a></li>
+                                <li><a asp-controller="Home" asp-action="Package">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end navigation part-->
+
+    </header>
+    <!--end header part-->
+    <!--banner part-->
+    <section class="inner_banner_part clearfix">
+        <!-- Slideshow 4 -->
+        <div class="callbacks_container">
+            <ul id="slider4">
+                <li>
+                    <img src="~/images/slider/inner_page_banner.gif" alt="">
+                    <!--<p class="caption">PACKAGE</span></p>-->
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--end banner part-->
+    <!--banner part-->
+    <section class="banner_part clearfix" style="display:none; !important">
+        <!-- Slideshow 4 -->
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider4">
+                <li>
+                    <img src="~/images/slider/banner1.gif" alt="">
+                    <!--<p class="caption">Las Vegas - 1</span></p>-->
+                </li>
+                <li>
+                    <img src="~/images/slider/banner2.gif" alt="">
+                    <!-- <p class="caption">Las Vegas - 2</p>-->
+                </li>
+                <li>
+                    <img src="~/images/slider/banner3.gif" alt="">
+                    <!--<<p class="caption">Las Vegas - 3</p>-->
+                </li>
+                <li>
+                    <img src="~/images/slider/banner4.gif" alt="">
+                    <!-- <p class="caption">Las Vegas - 3</p>-->
+                </li>
+                <li>
+                    <img src="~/images/slider/banner5.gif" alt="">
+                    <!-- <p class="caption">Las Vegas - 3</p>-->
+                </li>
+                <!-- -->
+            </ul>
+        </div>
+    </section>
+    <!--end banner part-->
+
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer_part">
+        <div class="container">
+            <div class="color_overlay_red"></div>
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-2">
+                    <a href="/" class="footer_logo"><img src="~/images/logo.png" alt="" title="" class="img-responsive" /></a>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-7">
+                    <div class="copyright_info">
+                        <!--<a href="privacy_policy.html" rel="nofollow">Privacy Policy</a>-->
+                        <p>Copyright &copy; 2023 Official website VegasVacation.vip. All rights reserved</p><br>
+                        <p><img src="~/images/creditcards.png" alt="" title="" class="img-responsive"></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <p class="powered_by_block">
+                        Powered by - <a href="http://www.serverpipe.com" target="_blank" rel="nofollow"> Server Pipe</a><br />
+                        <script type="text/javascript">
+                            //<![CDATA[
+                            var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+                            document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+                            //]]></script>
+                        <script language="JavaScript" type="text/javascript">
+                            TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+                        </script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/responsiveslides.js"></script>
+
+    <script class="secret-source">
+        // You can also use "$(window).load(function() {"
+        $(function () {
+
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+
+        jQuery(document).ready(function ($) {
+
+
+            //Examples of how to assign the Colorbox event to elements
+            //$(".group1").colorbox({rel:'group1'});
+            $(".group2").colorbox({ rel: 'group2', transition: "fade" });
+            //$(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+            //$(".group4").colorbox({rel:'group4', slideshow:true});
+            $(".ajax").colorbox();
+            $(".youtube").colorbox({ iframe: true, innerWidth: 640, innerHeight: 390 });
+            $(".vimeo").colorbox({ iframe: true, innerWidth: 500, innerHeight: 409 });
+            $(".iframe").colorbox({ iframe: true, width: "80%", height: "80%" });
+            $(".inline").colorbox({ inline: true, width: "50%" });
+            $(".callbacks").colorbox({
+                onOpen: function () { alert('onOpen: colorbox is about to open'); },
+                onLoad: function () { alert('onLoad: colorbox has started to load the targeted content'); },
+                onComplete: function () { alert('onComplete: colorbox has displayed the loaded content'); },
+                onCleanup: function () { alert('onCleanup: colorbox has begun the close process'); },
+                onClosed: function () { alert('onClosed: colorbox has completely closed'); }
+            });
+
+            $('.non-retina').colorbox({ rel: 'group5', transition: 'none' })
+            $('.retina').colorbox({ rel: 'group5', transition: 'none', retinaImage: true, retinaUrl: true });
+
+            //Example of preserving a JavaScript event for inline calls.
+            $("#click").click(function () {
+                $('#click').css({ "background-color": "#f00", "color": "#fff", "cursor": "inherit" }).text("Open this window again and this message will still be here.");
+                return false;
+            });
+
+
+
+            // Make ColorBox responsive
+            jQuery.colorbox.settings.maxWidth = '95%';
+            jQuery.colorbox.settings.maxHeight = '95%';
+
+            // ColorBox resize function
+            var resizeTimer;
+            function resizeColorBox() {
+                if (resizeTimer) clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function () {
+                    if (jQuery('#cboxOverlay').is(':visible')) {
+                        jQuery.colorbox.load(true);
+                    }
+                }, 300);
+            }
+
+            // Resize ColorBox when resizing window or changing mobile device orientation
+            jQuery(window).resize(resizeColorBox);
+            window.addEventListener("orientationchange", resizeColorBox, false);
+
+        });
+    </script>
+
+    }
+@await RenderSectionAsync("Scripts", required: false)
