@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Contact Us";
 }
+@model VegasVacationVip.Models.ContactUsModel
 
 <section class="site_page_title why_choose_title">
     <div class="container">
@@ -14,16 +15,18 @@
                 <div class="left_col_container">
 
                     <div class="common_page_container">
-                        <form method="post" name="contact" id="contact" action="process-contact.php" role="form" enctype="multipart/form-data">
+                        <form asp-controller="Home" asp-action="ProcessForm" role="form" enctype="multipart/form-data method="post">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">First Name</label>
-                                        <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required="">
+                                        <label asp-for="FirstName">First Name</label>
+                                        <input asp-for="FirstName" class="form-control" placeholder="First Name" required />
+                                        <span asp-validation-for="FirstName"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Last Name</label>
-                                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+                                        <label asp-for="LastName">Last Name</label>
+                                        <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                                        <span asp-validation-for="LastName"></span>
                                     </div>
                                 </div>
 
@@ -33,16 +36,18 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="">Phone</label>
-                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" required="">
+                                        <label asp-for="Phone">Phone</label>
+                                        <input asp-for="Phone" class="form-control" placeholder="Phone" required />
+                                        <span asp-validation-for="Phone"></span>
                                     </div>
 
 
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+                                        <label asp-for="Email">Email</label>
+                                        <input asp-for="Email" class="form-control" placeholder="Email" required />
+                                        <span asp-validation-for="Email"></span>
                                     </div>
 
 
@@ -52,17 +57,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Your Request</label>
-                                        <textarea name="request" id="request" class="form-control" rows="5" cols="5"></textarea>
-
+                                        <label asp-for="Request">Your Request</label>
+                                        <textarea asp-for="Request" class="form-control" rows="5" cols="5"></textarea>
+                                        <span asp-validation-for="Request"></span>
                                     </div>
-
-
                                 </div>
 
                             </div>
-
-
 
                             <div class="g-recaptcha" data-sitekey="6LftU-QUAAAAAMqKtTLEyltcOBi88S6--uzRfugm"></div>
                             <br />

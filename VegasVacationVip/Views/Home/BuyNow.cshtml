@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Buy Now";
 }
-@model VegasVacationVip.Models.FormData
+@model VegasVacationVip.Models.BuyNowModel
 
 <section class="site_page_title why_choose_title">
     <div class="container">
@@ -19,12 +19,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label asp-for="fname">First Name</label>
-                                        <input asp-for="fname" class="form-control" required />
+                                        <input asp-for="fname" class="form-control" placeholder="First Name" required />
                                         <span asp-validation-for="fname" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="lname">Last Name</label>
-                                        <input asp-for="lname" class="form-control" />
+                                        <input asp-for="lname" class="form-control" placeholder="Last Name" />
                                         <span asp-validation-for="lname" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -32,12 +32,12 @@
 
                                     <div class="form-group">
                                         <label asp-for="sfname">Spouse/Partner First Name</label>
-                                        <input asp-for="sfname" class="form-control" required />
+                                        <input asp-for="sfname" class="form-control" placeholder="Spouse/Partner First Name" required />
                                         <span asp-validation-for="sfname" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="slname">Spouse/Partner Last Name</label>
-                                        <input asp-for="slname" class="form-control" required />
+                                        <input asp-for="slname" class="form-control" placeholder="Spouse/Partner Last Name" required />
                                         <span asp-validation-for="slname" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label asp-for="address">Address</label>
-                                        <input asp-for="address" class="form-control" required />
+                                        <input asp-for="address" class="form-control" placeholder="Address" required />
                                         <span asp-validation-for="address" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
 
                                     <div class="form-group">
                                         <label asp-for="city">City</label>
-                                        <input asp-for="city" class="form-control" required />
+                                        <input asp-for="city" class="form-control" placeholder="City" required />
                                         <span asp-validation-for="city" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label asp-for="zipcode">ZIP/Postal Code</label>
-                                        <input asp-for="zipcode" class="form-control" required />
+                                        <input asp-for="zipcode" class="form-control" placeholder="ZIP/Postal Code" required />
                                         <span asp-validation-for="zipcode" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label asp-for="phone">Phone</label>
-                                        <input asp-for="phone" class="form-control" required />
+                                        <input asp-for="phone" class="form-control" placeholder="Phone" required />
                                         <span asp-validation-for="phone" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@
 
                                     <div class="form-group">
                                         <label asp-for="email">Email</label>
-                                        <input asp-for="email" class="form-control" required />
+                                        <input asp-for="email" class="form-control" placeholder="Email" required />
                                         <span asp-validation-for="email" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label asp-for="chname">Card Holder Name</label>
-                                        <input asp-for="chname" class="form-control" required />
+                                        <input asp-for="chname" class="form-control" placeholder="Card Holder Name" required />
                                         <span asp-validation-for="chname" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -211,7 +211,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label asp-for="cnumber">Card Number</label>
-                                        <input asp-for="cnumber" class="form-control" required />
+                                        <input asp-for="cnumber" class="form-control" placeholder="Card Number" required />
                                         <span asp-validation-for="cnumber" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -252,7 +252,7 @@
 
                                     <div class="form-group">
                                         <label asp-for="ccvv">CVV</label>
-                                        <input asp-for="ccvv" class="form-control" required />
+                                        <input asp-for="ccvv" class="form-control" placeholder="CVV" required />
                                         <span asp-validation-for="ccvv" class="text-danger"></span>
                                     </div>
                                 </div>
