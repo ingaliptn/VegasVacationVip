@@ -58,107 +58,6 @@ namespace VegasVacationVip.Controllers
             return View();
         }
 
-
-
-        //[HttpPost]
-        //public IActionResult ProcessForm(FormData formData)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        // Construct your email message
-        //        string body = $"First Name: {formData.fname}<br>" +
-        //                      $"Last Name: {formData.lname}<br>" +
-        //                      $"Spouse/Partner First Name: {formData.sfname}<br>" +
-        //                      $"Spouse/Partner Last Name: {formData.slname}<br>" +
-        //                      $"Address: {formData.address}<br>" +
-        //                      $"City: {formData.city}<br>" +
-        //                      $"State/Province: {formData.state}<br>" +
-        //                      $"ZIP/Postal Code: {formData.zipcode}<br>" +
-        //                      $"Country: {formData.country}<br>" +
-        //                      $"Phone: {formData.phone}<br>" +
-        //                      $"Email: {formData.email}<br>" +
-        //                      $"Card Holder Name: {formData.chname}<br>" +
-        //                      $"Card Type: {formData.ctype}<br>" +
-        //                      $"Card Number: {formData.cnumber}<br>" +
-        //                      $"Expiration Date: {formData.xmonth} / {formData.xyear}<br>" +
-        //                      $"CVV: {formData.ccvv}<br>";
-
-        //        // Configure the SMTP client
-        //        using (var client = new SmtpClient())
-        //        {
-
-        //            client.Host = formData.Smtp; // Your SMTP server (e.g., Gmail)
-        //            client.Port = formData.Port; // SMTP Port (Gmail uses 587)
-        //            client.EnableSsl = true;
-        //            client.UseDefaultCredentials = true;
-        //            client.Credentials = new NetworkCredential(formData.Login, formData.Password);
-
-        //            // Construct and send the email
-        //            var message = new MailMessage();
-        //            message.From = new MailAddress(formData.FromEmail, formData.FromName); // Your email address
-        //            message.To.Add(new MailAddress(formData.ToEmail));
-        //            message.Subject = formData.Subject; // Email subject
-        //            message.IsBodyHtml = true;
-        //            message.Body = body;
-
-        //            client.Send(message);
-        //        }
-
-        //        return RedirectToAction("Success"); // Redirect to success page after sending email
-        //    }
-        //    else
-        //    {
-        //        var errors = ModelState.Values.SelectMany(v => v.Errors);
-        //        // Log or debug the errors to understand which fields are failing validation
-        //    }
-
-        //    return View("Index", formData);
-        //}
-
-        //[HttpPost]
-        //public static string SendMessage(MailModel m)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        // Construct your email message
-        //        string body = $"First Name: {m.FirstName}<br>" +
-        //                      $"Last Name: {m.LastName}<br>" +
-        //                      $"Phone: {m.Phone}<br>" +
-        //                      $"Email: {m.Email}<br>" +
-        //                      $"Request: {m.Request}<br>";
-
-        //        // Configure the SMTP client
-        //        using (var client = new SmtpClient())
-        //        {
-
-        //            client.Host = m.Smtp; // Your SMTP server (e.g., Gmail)
-        //            client.Port = m.Port; // SMTP Port (Gmail uses 587)
-        //            client.EnableSsl = true;
-        //            client.UseDefaultCredentials = true;
-        //            client.Credentials = new NetworkCredential(m.Login, m.Password);
-
-        //            // Construct and send the email
-        //            var message = new MailMessage();
-        //            message.From = new MailAddress(m.FromEmail, m.FromName); // Your email address
-        //            message.To.Add(new MailAddress(m.ToEmail));
-        //            message.Subject = m.Subject; // Email subject
-        //            message.IsBodyHtml = true;
-        //            message.Body = body;
-
-        //            client.Send(message);
-        //        }
-
-        //        return RedirectToAction("Success"); // Redirect to success page after sending email
-        //    }
-        //    else
-        //    {
-        //        var errors = ModelState.Values.SelectMany(v => v.Errors);
-        //        // Log or debug the errors to understand which fields are failing validation
-        //    }
-
-        //    return View("Index", m);
-        //}
-
         [HttpPost]
         public IActionResult ProcessForm(BuyNowModel bn, ContactUsModel cu, LogicModel l)
         {
@@ -167,11 +66,11 @@ namespace VegasVacationVip.Controllers
                 string body;
                 if (!string.IsNullOrEmpty(bn.fname)) // Check if formData contains fields specific to the first method
                 {
-                    body = ConstructBodyFromFormData(bn);
+                    body = ConstructBodyFromBuyNowModel(bn);
                 }
                 else if (!string.IsNullOrEmpty(cu.FirstName)) // Check if mailModel contains fields specific to the second method
                 {
-                    body = ConstructBodyFromMailModel(cu);
+                    body = ConstructBodyFromContactUsModel(cu);
                 }
                 else
                 {
@@ -208,7 +107,7 @@ namespace VegasVacationVip.Controllers
             return View("Index");
         }
 
-        private string ConstructBodyFromFormData(BuyNowModel bn)
+        private string ConstructBodyFromBuyNowModel(BuyNowModel bn)
         {
             return $"First Name: {bn.fname}<br>" +
                               $"Last Name: {bn.lname}<br>" +
@@ -228,7 +127,7 @@ namespace VegasVacationVip.Controllers
                               $"CVV: {bn.ccvv}<br>";
         }
 
-        private string ConstructBodyFromMailModel(ContactUsModel cu)
+        private string ConstructBodyFromContactUsModel(ContactUsModel cu)
         {
             return $"First Name: {cu.FirstName}<br>" +
                               $"Last Name: {cu.LastName}<br>" +
