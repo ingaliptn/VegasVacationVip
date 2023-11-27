@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<section class="site_page_title why_choose_title">
+    <div class="container">
+        <div class="page_title_box common_page_title clearfix">
+            <h1>Contact Us</h1>
+        </div>
+
+        <div class="row">
+            <!--left col container-->
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <div class="left_col_container">
+
+                    <div class="common_page_container">
+                        <form method="post" name="contact" id="contact" action="process-contact.php" role="form" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">First Name</label>
+                                        <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Last Name</label>
+                                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" required="">
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Your Request</label>
+                                        <textarea name="request" id="request" class="form-control" rows="5" cols="5"></textarea>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="g-recaptcha" data-sitekey="6LftU-QUAAAAAMqKtTLEyltcOBi88S6--uzRfugm"></div>
+                            <br />
+
+
+                            <!-- <p class="contact_tips">*By clicking "Submit" you authorize us to contact you using the information provided regarding your 239ToVegas Package</p>-->
+
+                            <input type="submit" name="submit" class="btn btn-warning submit_btn" id="submit" value=" Submit ">
+                            <!--<input type="submit" name="submit" value="Submit" class="btn btn-warning submit_btn">-->
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
