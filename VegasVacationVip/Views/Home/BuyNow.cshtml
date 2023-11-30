@@ -14,7 +14,7 @@
             <div class="col-sm-8 col-md-8 col-lg-8">
                 <div class="left_col_container">
                     <div class="common_page_container">
-                        <form asp-controller="Home" asp-action="ProcessForm" role="form" enctype="multipart/form-data method="post">
+                        <form asp-controller="Home" asp-action="ProcessForm" role="form" id="form" enctype="multipart/form-data method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -288,14 +288,29 @@
 
                                 </div>
                             </div>
-
+                            <div class="g-recaptcha" data-sitekey="6Le1NiIpAAAAAGPYfCIHTVtLtwBb8ccNdGlvZu3a"></div>
+                            <br />
 
                             <input name="reset" type="reset" class="btn btn-warning submit_btn" value="Clear Form">
-                            <input type="submit" name="sendNewSms" class="btn btn-warning submit_btn" id="sendNewSms" disabled="" value=" Submit ">
-                            
+                            <input type="submit" name="sendNewSms" class="btn btn-warning submit_btn" id="sendNewSms" disabled="" value="Submit">
+                            <script type="text/javascript">
+                                var onloadCallback = function () {
+                                    console.log("grecaptcha is ready!");
+                                };
+                            </script>
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                                    async defer>
+                            </script>
+                            <script>
+                                $('form').submit(function (event) {
+                                    if ($('#g-recaptcha-response').val() === '') {
+                                        event.preventDefault();
+                                        alert('Please check the recaptcha');
+                                    }
+                                });</script>
                         </form>
                     </div>
-
+                    
                 </div>
             </div>
 

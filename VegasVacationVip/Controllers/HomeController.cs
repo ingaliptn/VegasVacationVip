@@ -10,46 +10,6 @@ namespace VegasVacationVip.Controllers
 {
     public class HomeController : Controller
     {
-        private const string RemoteAddress = "https://www.google.com/recaptcha/api/siteverify";
-        private readonly string _secretKey;
-        private readonly double acceptableScore;
-        private readonly IHttpClientFactory _httpClientFactory;
-
-        public HomeController(IHttpClientFactory httpClient, IConfiguration configuration)
-        {
-            _httpClientFactory = httpClient;
-            _secretKey = configuration["ReCaptcha:SecretKey"];
-            acceptableScore = double.Parse(configuration["ReCaptcha:AcceptableScore"]);
-        }
-
-        public async Task<bool> IsCaptchaPassedAsync(string token)
-        {
-            dynamic response = await GetCaptchaResultDataAsync(token);
-            if (response.success == "true")
-            {
-                return System.Convert.ToDouble(response.score) >= acceptableScore;
-            }
-            return false;
-        }
-
-        public async Task<JObject> GetCaptchaResultDataAsync(string token)
-        {
-            var content = new FormUrlEncodedContent(new[]
-            {
-                new KeyValuePair<string, string>("secret", _secretKey),
-                new KeyValuePair<string, string>("response", token)
-            });
-            using var httpClient = _httpClientFactory.CreateClient();
-            var res = await httpClient.PostAsync(RemoteAddress, content);
-            if (res.StatusCode != HttpStatusCode.OK)
-            {
-                throw new HttpRequestException(res.ReasonPhrase);
-            }
-            var jsonResult = await res.Content.ReadAsStringAsync();
-            return JObject.Parse(jsonResult);
-
-        }
-
         public IActionResult Home()
         {
             return View();
@@ -139,14 +99,14 @@ namespace VegasVacationVip.Controllers
 
                     client.Send(message);
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Home");
             }
             else
             {
                 var errors = ModelState.Values.SelectMany(v => v.Errors);
             }
 
-            return View("Index");
+            return View("Home");
         }
 
         private string ConstructBodyFromBuyNowModel(BuyNowModel bn)

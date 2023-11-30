@@ -49,11 +49,4 @@ namespace VegasVacationVip.Models
         public string? xyear { get; set; }
         public string? ccvv { get; set; }
     }
-    public class RECaptcha
-    {
-        public string Key = "6LcTKiIpAAAAABKulleorYPyhAlWb_H51rDdEHV5";
-
-        public string Secret = "6LcTKiIpAAAAAJoNGy2-NRVNLzkq8IynaXiV1UJc";
-        public string Response { get; set; }
-    }
 }

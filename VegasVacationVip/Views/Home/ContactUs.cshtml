@@ -65,14 +65,29 @@
 
                             </div>
 
-                            <div class="g-recaptcha" data-sitekey="6LftU-QUAAAAAMqKtTLEyltcOBi88S6--uzRfugm"></div>
-                            <br />
 
 
                             <!-- <p class="contact_tips">*By clicking "Submit" you authorize us to contact you using the information provided regarding your 239ToVegas Package</p>-->
-
+                            <div class="g-recaptcha" data-sitekey="6Le1NiIpAAAAAGPYfCIHTVtLtwBb8ccNdGlvZu3a"></div>
+                            <br />
                             <input type="submit" name="submit" class="btn btn-warning submit_btn" id="submit" value=" Submit ">
                             <!--<input type="submit" name="submit" value="Submit" class="btn btn-warning submit_btn">-->
+
+                            <script type="text/javascript">
+                                var onloadCallback = function () {
+                                    console.log("grecaptcha is ready!");
+                                };
+                            </script>
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                                    async defer>
+                            </script>
+                            <script>
+                                $('form').submit(function (event) {
+                                    if ($('#g-recaptcha-response').val() === '') {
+                                        event.preventDefault();
+                                        alert('Please check the recaptcha');
+                                    }
+                                });</script>
                         </form>
 
                     </div>
