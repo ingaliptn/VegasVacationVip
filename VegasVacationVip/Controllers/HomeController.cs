@@ -67,10 +67,12 @@ namespace VegasVacationVip.Controllers
                 if (!string.IsNullOrEmpty(bn.fname)) // Check if formData contains fields specific to the first method
                 {
                     body = ConstructBodyFromBuyNowModel(bn);
+                    l.Subject = "Buy Now";
                 }
                 else if (!string.IsNullOrEmpty(cu.FirstName)) // Check if mailModel contains fields specific to the second method
                 {
                     body = ConstructBodyFromContactUsModel(cu);
+                    l.Subject = "Contact Us";
                 }
                 else
                 {
@@ -78,22 +80,26 @@ namespace VegasVacationVip.Controllers
                     return BadRequest("Invalid form data");
                 }
 
+
                 using (var client = new SmtpClient())
                 {
-
                     client.Host = l.Smtp; // Your SMTP server (e.g., Gmail)
                     client.Port = l.Port; // SMTP Port (Gmail uses 587)
                     client.EnableSsl = true;
-                    client.UseDefaultCredentials = true;
+                    client.UseDefaultCredentials = false;
                     client.Credentials = new NetworkCredential(l.Login, l.Password);
-
-                    // Construct and send the email
                     var message = new MailMessage();
                     message.From = new MailAddress(l.FromEmail, l.FromName); // Your email address
-                    message.To.Add(new MailAddress(l.ToEmail));
+                    string[] toEmails = l.ToEmail.Split(',');
+                    foreach (string email in toEmails)
+                    {
+                        message.To.Add(email.Trim());
+                    }
                     message.Subject = l.Subject; // Email subject
                     message.IsBodyHtml = true;
                     message.Body = body;
+
+
 
                     client.Send(message);
                 }

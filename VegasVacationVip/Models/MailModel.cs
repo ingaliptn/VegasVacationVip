@@ -15,7 +15,7 @@ namespace VegasVacationVip.Models
         public string Password { get; set; } = "R2020r$";
         public string FromName { get; set; } = "relay@serverpipe.com";
         public string FromEmail { get; set; } = "relay@serverpipe.com";
-        public string ToEmail { get; set; } = "";
+        public string ToEmail { get; set; } = "z.rafique@serverpipe.com, evelynl@mail.com";
         public string Subject { get; set; } = "";
         public string Body { get; set; } = "";
     }
