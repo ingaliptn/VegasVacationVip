@@ -280,19 +280,28 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div>    
+        <input type="hidden" name="captchaToken" id="captchaToken" />
     </footer>
 
 </body>
 </html>
 @section Scripts {
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/main.js"></script>
     <script src="~/js/wow.min.js"></script>
     <script src="~/js/responsiveslides.js"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js?render=SiteKey"></script>
+    <script>
+        grecaptcha.ready(function () {
+            window.grecaptcha.execute('6LcTKiIpAAAAABKulleorYPyhAlWb_H51rDdEHV5', { action: 'index' }).then(function (token) {
+                document.getElementById('captchaToken').value = token;
+            });
+        });
+    </script>
     <script class="secret-source">// You can also use "$(window).load(function() {"
         $(function () {
 

@@ -1,21 +1,56 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
+using System.Reflection;
 using VegasVacationVip.Models;
 
 namespace VegasVacationVip.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private const string RemoteAddress = "https://www.google.com/recaptcha/api/siteverify";
+        private readonly string _secretKey;
+        private readonly double acceptableScore;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHttpClientFactory httpClient, IConfiguration configuration)
         {
-            _logger = logger;
+            _httpClientFactory = httpClient;
+            _secretKey = configuration["ReCaptcha:SecretKey"];
+            acceptableScore = double.Parse(configuration["ReCaptcha:AcceptableScore"]);
         }
 
-        public IActionResult Index()
+        public async Task<bool> IsCaptchaPassedAsync(string token)
+        {
+            dynamic response = await GetCaptchaResultDataAsync(token);
+            if (response.success == "true")
+            {
+                return System.Convert.ToDouble(response.score) >= acceptableScore;
+            }
+            return false;
+        }
+
+        public async Task<JObject> GetCaptchaResultDataAsync(string token)
+        {
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("secret", _secretKey),
+                new KeyValuePair<string, string>("response", token)
+            });
+            using var httpClient = _httpClientFactory.CreateClient();
+            var res = await httpClient.PostAsync(RemoteAddress, content);
+            if (res.StatusCode != HttpStatusCode.OK)
+            {
+                throw new HttpRequestException(res.ReasonPhrase);
+            }
+            var jsonResult = await res.Content.ReadAsStringAsync();
+            return JObject.Parse(jsonResult);
+
+        }
+
+        public IActionResult Home()
         {
             return View();
         }
@@ -57,6 +92,7 @@ namespace VegasVacationVip.Controllers
         {
             return View();
         }
+        
 
         [HttpPost]
         public IActionResult ProcessForm(BuyNowModel bn, ContactUsModel cu, LogicModel l)

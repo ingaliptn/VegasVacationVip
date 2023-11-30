@@ -7,17 +7,18 @@ namespace VegasVacationVip.Models
 {
     public class LogicModel
     {
-        public string Smtp { get; set; } = "mx.serverpipe.com";
-        public int Port { get; set; } = 25;
+        public string Smtp { get; set; } = "outlook.office365.com";
+        public int Port { get; set; } = 587;
         public bool IsEnableSsl { get; set; } = true;
         public bool IsUseDefaultCredentials { get; set; }
-        public string Login { get; set; } = "relay";
-        public string Password { get; set; } = "R2020r$";
-        public string FromName { get; set; } = "relay@serverpipe.com";
-        public string FromEmail { get; set; } = "relay@serverpipe.com";
-        public string ToEmail { get; set; } = "z.rafique@serverpipe.com, evelynl@mail.com";
-        public string Subject { get; set; } = "";
-        public string Body { get; set; } = "";
+        public string Login { get; set; } = "welcome@vegasvacations.vip";
+        public string Email { get; set; } = "welcome@vegasvacations.vip";
+        public string Password { get; set; } = "Z326050r$";
+        public string FromName { get; set; } = "Vegas Vacation VIP";
+        public string FromEmail { get; set; } = "welcome@vegasvacations.vip";
+        public string ToEmail { get; set; } = "nikitatkachuk6@gmail.com";//"z.rafique@serverpipe.com, evelynl@mail.com";
+        public string? Subject { get; set; }
+        public string? Body { get; set; }
     }
     public class ContactUsModel
     {
@@ -47,5 +48,12 @@ namespace VegasVacationVip.Models
         public string? xmonth { get; set; }
         public string? xyear { get; set; }
         public string? ccvv { get; set; }
+    }
+    public class RECaptcha
+    {
+        public string Key = "6LcTKiIpAAAAABKulleorYPyhAlWb_H51rDdEHV5";
+
+        public string Secret = "6LcTKiIpAAAAAJoNGy2-NRVNLzkq8IynaXiV1UJc";
+        public string Response { get; set; }
     }
 }
