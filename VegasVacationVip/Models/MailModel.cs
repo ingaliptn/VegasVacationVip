@@ -16,7 +16,7 @@ namespace VegasVacationVip.Models
         public string Password { get; set; } = "Z326050r$";
         public string FromName { get; set; } = "Vegas Vacation VIP";
         public string FromEmail { get; set; } = "welcome@vegasvacations.vip";
-        public string ToEmail { get; set; } = "nikitatkachuk6@gmail.com";//"z.rafique@serverpipe.com, evelynl@mail.com";
+        public string ToEmail { get; set; } = "z.rafique@serverpipe.com, evelynl@mail.com";
         public string? Subject { get; set; }
         public string? Body { get; set; }
     }
