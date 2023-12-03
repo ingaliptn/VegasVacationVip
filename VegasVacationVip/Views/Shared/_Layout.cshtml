@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vegas Vacation VIP</title>
+    <title>Welcome to Vegas Vacations VIP!</title>
 
     <meta name="description" content="">
     <meta name="robots" content="">
@@ -32,6 +32,8 @@
     <script src="~/js/jquery.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
 
+
+    <link href="https://kit-pro.fontawesome.com/releases/v6.5.1/css/pro.min.css" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--menu js-->
     <script src="~/js/menu.js" type="text/javascript"></script>
@@ -39,7 +41,8 @@
     <!--slider js-->
     <!--<script src="js/jquery.colorbox.js" type="text/javascript" ></script>-->
 
-    <script class="secret-source">// You can also use "$(window).load(function() {"
+    <script class="secret-source">
+    // You can also use "$(window).load(function() {"
         $(function () {
 
             // Slideshow 4
@@ -112,7 +115,8 @@
 
 
     <script src="~/js/jquery.shiningImage.min.js"></script>
-    <script>jQuery(document).ready(function ($) {
+    <script>
+    jQuery(document).ready(function ($) {
             $('h2').textEffect('slide'); $('#vegas1').textEffect('fade'); $('#vegas2').textEffect('grow'); $('#vegas3').textEffect({
                 effect: 'jumble', effectSpeed: 150, completionSpeed: 6000, jumbleColor: '#7f7f7f'
             });
@@ -120,7 +124,8 @@
             $('#vegas5').textEffect('dropdown');
         });</script>
 
-    <script>$(window).load(function () {
+    <script>
+    $(window).load(function () {
             $('#demo1').shiningImage(); $('#vegas2').shiningImage({
                 direction: 'x', color: '#FFFFFF', opacity: 1, scale: 0.7, speed: 80, delay: 3000
             });
@@ -148,7 +153,8 @@
         });</script>
 
 
-    <script>jQuery(document).ready(function ($) {
+    <script>
+    jQuery(document).ready(function ($) {
             $('h2').textEffect('slide'); $('#vegas1').textEffect('fade'); $('#vegas2').textEffect('grow'); $('#vegas3').textEffect({
                 effect: 'jumble', effectSpeed: 150, completionSpeed: 6000, jumbleColor: '#7f7f7f'
             });
@@ -158,28 +164,64 @@
 
 
 
-    <script type="text/javascript">//<![CDATA[
+    <script type="text/javascript">
+    //<![CDATA[
         var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
         document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
         //]]></script>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        .social-icons-footer {
+            text-align: center;
+            margin-top: 25px;
+            margin-left: 23px;
+        }
 
+        .social-icons-header {
+            text-align: center;
+            padding-left: 15px;
+        }
+
+        .social-icon {
+            margin-right: 20px;
+        }
+
+        .facebook-icon {
+            color: #1877F2;
+        }
+
+        .instagram-icon {
+            color: #C13584;
+        }
+
+        .twitter-icon {
+            color: #1DA1F2;
+        }
+    </style>
 </head>
 <!--/head-->
 <body>
     <header class="header_part navbar-fixed-top">
+        
+
         <div class="top_part">
             <div class="container">
                 <div class="row">
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <div class="social-icons-header">
+                            <a href="https://www.facebook.com/vegasvacationsvip/" class="social-icon me-4 facebook-icon"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                            <a href="https://www.instagram.com/vegasvacationsvip/" class="social-icon me-4 instagram-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://twitter.com/vegasvacationsv" class="social-icon twitter-icon"><i class="fab fa-twitter fa-2x"></i></a>
+                        </div>
+                    </div>
                     <div class="col-sm-2"></div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <div class="topbar_contact_info"><a href="tel:+8004198000">(800) 419-8000</a></div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!--navigation part-->
         <section class="navigation_part">
             <div class="navigation_container">
@@ -188,7 +230,7 @@
                         <a id="touch-menu" class="mobile-menu" href="#"><i class="icon-reorder"></i>Navigation</a>
                         <nav>
                             <ul class="menu">
-                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Home" asp-action="Home">Home</a></li>
                                 <li><a asp-controller="Home" asp-action="Package">Package</a></li>
                                 <li><a asp-controller="Home" asp-action="Hotels">Hotels</a></li>
                                 <li><a asp-controller="Home" asp-action="Gifts">Gifts</a></li>
@@ -262,18 +304,24 @@
             <div class="row">
                 <div class="col-sm-3 col-md-3 col-lg-2">
                     <a href="/" class="footer_logo"><img src="~/images/logo.png" alt="" title="" class="img-responsive" /></a>
+                    <div class="social-icons-footer">
+                        <a href="https://www.facebook.com/vegasvacationsvip/" class="social-icon facebook-icon"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                        <a href="https://www.instagram.com/vegasvacationsvip/" class="social-icon instagram-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://twitter.com/vegasvacationsv" class="social-icon twitter-icon"><i class="fab fa-twitter fa-2x"></i></a>
+                    </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-7">
                     <div class="copyright_info">
-                        <!--<a href="privacy_policy.html" rel="nofollow">Privacy Policy</a>-->
                         <p>Copyright &copy; 2023 Official website VegasVacation.vip. All rights reserved</p><br>
                         <p><img src="~/images/creditcards.png" alt="" title="" class="img-responsive"></p>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3">
+                    
                     <p class="powered_by_block">
                         Powered by - <a href="http://www.serverpipe.com" target="_blank" rel="nofollow"> Server Pipe</a><br />
-                        <script type="text/javascript">//<![CDATA[
+                        <script type="text/javascript">
+                            //<![CDATA[
                             var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
                             document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
                             //]]></script>
@@ -281,7 +329,7 @@
                     </p>
                 </div>
             </div>
-        </div>    
+        </div>
         <input type="hidden" name="captchaToken" id="captchaToken" />
     </footer>
 
