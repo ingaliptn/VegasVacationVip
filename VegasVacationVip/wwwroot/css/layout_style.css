@@ -2102,7 +2102,10 @@ ul.unorder_list {
         padding: 5px 10px;
     }
 
-
+.topbar_contact_number {
+    color: #FFFFFF;
+    font-size: 18px;
+}
 .topbar_contact_info {
     display: block;
     text-align: right;

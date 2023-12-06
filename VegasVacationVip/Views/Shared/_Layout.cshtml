@@ -175,11 +175,11 @@
         .social-icons-footer {
             text-align: center;
             margin-top: 25px;
-            margin-left: 23px;
+            margin-left: 15px;
         }
 
         .social-icons-header {
-            text-align: center;
+            /*text-align: center;*/
             padding-left: 15px;
         }
 
@@ -199,14 +199,34 @@
             color: #0f1419;
             ;
         }
+
+        .result a {
+            float: left;
+        }
+
+            .result a:last-child {
+                float: right;
+            }
     </style>
 </head>
 <!--/head-->
 <body>
     <header class="header_part navbar-fixed-top">
         
-
         <div class="top_part">
+            <div class="container d-flex justify-content-end">
+                <div class="social-icons-header result">
+                    <a href="https://www.facebook.com/vegasvacationsvip/" target="_blank" class="social-icon me-4 facebook-icon"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                    <a href="https://www.instagram.com/vegasvacationsvip/" target="_blank" class="social-icon me-4 instagram-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://twitter.com/vegasvacationsv" target="_blank" class="social-icon twitter-icon"><i class="fab fa-x-twitter fa-2x"></i></a>
+                    <a class="topbar_contact_number" href="tel:+8004198000">(800) 419-8000</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!--old top part-->
+        @*<div class="top_part">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2 d-flex justify-content-end">
@@ -222,7 +242,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
+        <!--end old top part-->
+
         <!--navigation part-->
         <section class="navigation_part">
             <div class="navigation_container">
