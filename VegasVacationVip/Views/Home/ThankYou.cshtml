@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        font-family: 'Droid Sans', Arial, Tahoma, Geneva, sans-serif;
+        text-align: justify;
+        font-size: 14px;
+        line-height: 20px;
+        color: #3a3a3a;
+        margin: 0;
+    }
+
+    .thank_you_wrap {
+        max-width: 640px;
+        border: 10px solid #000000;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .thankyou_image {
+        display: block;
+        position: relative;
+    }
+
+        .thankyou_image img {
+            display: inline-block;
+            max-width: 100%;
+        }
+
+    .thankyou_description {
+        padding: 20px 20px 40px;
+    }
+
+    .thankyou_footer {
+        background: #000000;
+        padding: 20px;
+        display: block;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-family: 'Droid Sans', Arial, Tahoma, Geneva, sans-serif;
+    }
+
+    .thankyou_description .featured_text {
+        font-size: 18px;
+    }
+
+    @@media (max-width: 767px) {
+        .thank_you_wrap {
+            margin-top: 0px;
+        }
+    }
+</style>
+<body>
+
+    <!--main container part-->
+    <section class="site_page_title why_choose_title">
+        <div class="container">
+            <div class="thank_you_wrap">
+                <div class="thankyou_image">
+                    <img src="~/images/email_banner10.jpg" alt="" title="" />
+                </div><br>
+                <div class="thankyou_description">
+                    <p class="featured_text">Thank you for your recommendation(s).</p><br>
+                    <p class="featured_text">We will do our best to deliver the level of service you have come to expect from us.</p><br><br><br>
+                    <p class="featured_text">Las Vegas Vacations VIP Team</p>
+                </div>
+                <div class="thankyou_footer">© 2023 VegasVacations.VIP, All Rights Reserved</div>
+            </div>
+        </div>
+    </section>
+    <script>
+        setTimeout(function () {
+            window.location.replace(`@Url.Action("Home", "Home")`);
+        }, 10000);
+    </script>
+    <!--end main container part-->
+</body>

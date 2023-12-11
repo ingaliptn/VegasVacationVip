@@ -52,6 +52,9 @@ namespace VegasVacationVip.Controllers
         {
             return View();
         }
+        public IActionResult ThankYou() {
+            return View();
+        } 
         
 
         [HttpPost]
@@ -99,7 +102,7 @@ namespace VegasVacationVip.Controllers
 
                     client.Send(message);
                 }
-                return RedirectToAction("Home");
+                return RedirectToAction("ThankYou");
             }
             else
             {
