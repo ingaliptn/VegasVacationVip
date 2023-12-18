@@ -1,5 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using VegasVacationVip.Models
+@{
+    var metadata = new PageMetadata
+            {
+                Title = "Welcome to Vegas Vacations VIP!",
+                Description = "Get the best rate on your Las Vegas resort - Vegas Vacations VIP.",
+                CanonicalUrl = "https://vegasvacations.vip/"
+            };
+}
+
+@{
+    ViewData["PageMetadata"] = metadata;
 }
 <section class="vegas_section_3 site_page_title">
     <div class="container">

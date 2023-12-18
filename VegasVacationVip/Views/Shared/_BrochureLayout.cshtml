@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>VegasVacations.VIP - You are Invited!</title>
+        <link rel="shortcut icon" href="~/ebrochure/images/icon/favicon.ico">
+
+        <!-- Bootstrap core CSS -->
+        <link href="~/ebrochure/css/bootstrap.css" rel="stylesheet">
+        <!--<link href="css/bootstrap-theme.css" rel="stylesheet">-->
+        <link href="~/ebrochure/css/pikaday.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!-- Custom CSS for the 'DREAM GIRLS AMERICA' Template -->
+        <link href="~/ebrochure/css/layout_style.css" type="text/css" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <!--bootstrap js -->
+        <script src="~/ebrochure/js/jquery.js"></script>
+        <script src="~/ebrochure/js/bootstrap.js"></script>
+
+        <!--menu js-->
+        <script src="~/ebrochure/js/menu.js" type="text/javascript"></script>
+
+    </head>
+</head>
+<body>
+    <div class="top_bar_link">
+        <a asp-action="Book">View eBrochure?</a>
+    </div>
+    <div class="page_container">
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        <div class="footer_block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="copyright_info">Copyright &copy; 2024, VegasVacations.VIP, All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

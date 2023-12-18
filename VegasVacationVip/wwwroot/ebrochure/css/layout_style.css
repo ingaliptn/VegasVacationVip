@@ -1,0 +1,138 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic);
+
+*{margin:0; padding:0;}
+
+body {
+  font-family:'OpenSansRegular', Arial, Tahoma, Geneva, sans-serif;
+  font-size:13px;
+  background:/* url(../images/bg.jpg) no-repeat center top fixed */#000717;
+  padding:0;
+  margin:0;
+}
+
+form{
+	margin:0;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+  outline:0 none;
+}
+
+a:hover,
+a:focus {
+  color: #005580;
+  text-decoration: none;
+  outline:0 none;
+}
+
+p{
+	font-family:'OpenSansRegular', Arial, Tahoma, Geneva, sans-serif;
+	font-weight:400;
+	text-align:left;
+	font-size:14px;
+	line-height:20px;
+	color:#C8C8C8;
+	margin:0;
+}
+
+/* header style */
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Droid Sans',Tahoma,sans-serif;
+    color:#000d6b;
+	font-style:normal;
+	font-weight:normal;
+	margin:0;
+}
+/*FONT SIZE*/
+h1 {
+    font-size: 30px;
+    line-height:36px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size:21px;
+}
+h4 {
+    font-size:18px;
+}
+h5{
+    font-size:16px;
+}
+h6 {
+    font-size:14px;
+}
+
+.header_bg{
+	display:block;
+	text-align:center;
+	margin-bottom:-10px;
+	margin-top:10px;
+}
+
+.header_bg img{
+	display:inline-block;
+	text-align:center;
+}
+
+.page_container{
+	padding:20px 0 0;
+	margin-bottom:0px;
+	/*background:#FFF;
+	box-shadow:0 3px 3px #3C3C3C; -moz-box-shadow:0 3px 3px #3C3C3C; -webkit-box-shadow:0 3px 3px #3C3C3C; -o-box-shadow:0 3px 3px #3C3C3C;*/
+	display:block;
+	text-align:center;
+}
+.page_container img{
+	display:inline-block;
+	text-align:center;
+	margin-bottom:10px;
+}
+
+
+.footer_block{
+	background:#000614);
+	padding:10px 0 20px;
+	text-align:center;
+	margin-top:100px;
+}
+.footer_block p{
+	display:block;
+	text-align:center;
+}
+.footer_block p.copyright_info{
+	color:#999999;
+	font-size:13px;
+}
+.footer_block p.serverpipe_info{
+	color:#d7d7d7;
+	font-size:12px;
+}
+.footer_block p.serverpipe_info a{
+	color:#d7d7d7;
+}
+.footer_block p.serverpipe_info a:hover{
+	color:#eee;
+	text-decoration:underline;
+}
+
+
+
+.top_bar_link{
+	display:block;
+	text-align:center;
+	background:#000d29;
+	padding:8px 10px;
+}
+.top_bar_link a{
+	color:#fffe35;
+	text-decoration:none;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:13px;
+}
+.top_bar_link a:hover{
+	color:#ff7200;
+}

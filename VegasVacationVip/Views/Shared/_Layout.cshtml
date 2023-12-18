@@ -1,14 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using VegasVacationVip.Models
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Welcome to Vegas Vacations VIP!</title>
-
-    <meta name="description" content="">
-    <meta name="robots" content="">
-    <link rel="canonical" href="" />
+    <title>@((ViewData["PageMetadata"] as PageMetadata)?.Title)</title>
+    <meta name="description" content="@((ViewData["PageMetadata"] as PageMetadata)?.Description)">
+    <link rel="canonical" href="@((ViewData["PageMetadata"] as PageMetadata)?.CanonicalUrl)">
+    <meta name="robots" content="index, follow">
 
     <link rel="shortcut icon" href="~/images/icon/favicon.ico">
 
@@ -32,7 +30,6 @@
 
     <script src="~/js/jquery.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
-
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--menu js-->
@@ -116,7 +113,6 @@
         });
     </script>
 
-
     <script src="~/js/jquery.shiningImage.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
@@ -157,9 +153,6 @@
         });
     </script>
 
-
-
-
     <script type="text/javascript">
         //<![CDATA[
         var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
@@ -168,6 +161,7 @@
     </script>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <style>
         .social-icons-footer {
             text-align: center;
@@ -216,8 +210,8 @@
                     <div class="col-xs-6">
                         <div class="topbarSocial_icons">
                             <a href="https://www.facebook.com/vegasvacationsvip/" target="_blank"><img src="/images/social_img/facebook_icon.png" /></i></a>
-                            <a href="https://www.instagram.com/vegasvacationsvip/" target="_blank"><img src="/images/social_img/x_twitter_icon.png" /></a>
-                            <a href="https://twitter.com/vegasvacationsv" target="_blank"><img src="/images/social_img/instagran_colorful_icon.png" /></a>
+                            <a href="https://twitter.com/vegasvacationsv" target="_blank"><img src="/images/social_img/x_twitter_icon.png" /></a>
+                            <a href="https://www.instagram.com/vegasvacationsvip/" target="_blank"><img src="/images/social_img/instagran_colorful_icon.png" /></a>
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -311,13 +305,13 @@
                     <a href="/" class="footer_logo"><img src="~/images/vvp_ft_logo.png" alt="" title="" class="img-responsive" /></a>
                     <div class="ftSocial_icons">
                         <a href="https://www.facebook.com/vegasvacationsvip/" target="_blank"><img src="/images/social_img/facebook_icon.png" /></i></a> 
-                        <a href="https://www.instagram.com/vegasvacationsvip/" target="_blank"><img src="/images/social_img/x_twitter_icon.png" /></a>   
-                        <a href="https://twitter.com/vegasvacationsv" target="_blank"><img src="/images/social_img/instagran_colorful_icon.png" /></a>   
+                        <a href="https://twitter.com/vegasvacationsv" target="_blank"><img src="/images/social_img/x_twitter_icon.png" /></a>   
+                        <a href="https://www.instagram.com/vegasvacationsvip/" target="_blank"><img src="/images/social_img/instagran_colorful_icon.png" /></a>   
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="copyright_info">
-                        <p>Copyright &copy; 2023 Official website VegasVacation.vip. All rights reserved</p><br>
+                        <p>Copyright &copy; 2024 Official website <a asp-action="Home">VEGAS VACATIONS VIP.</a>All rights reserved</p><br>
                         <p><img src="~/images/creditcards.png" alt="" title="" class="img-responsive"></p>
                     </div>
                 </div>

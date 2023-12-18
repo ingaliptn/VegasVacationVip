@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+    <!-- viewport -->
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
+    <!-- title -->
+    <title>VegasVacations.VIP - You are Invited!</title>
+
+    <meta property="og:title" content="Orlando Vegas Offer">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://offer.orlando.vegas/img/image_1024x1024.jpg">
+    <meta property="og:url" content="http://offer.orlando.vegas">
+    <meta property="og:site_name" content="Orlando Vegas Offer">
+    <meta property="og:type" content="article">
+    <meta property="fb:app_id" content="307177860072629">
+
+    <link rel="shortcut icon" href="~/ebrochure/img/favicon.ico" type="img/x-icon">
+    <link rel="icon" href="~/ebrochure/img/favicon.ico" type="img/x-icon">
+
+
+    <!-- add css and js for flipbook -->
+    <link type="text/css" href="~/ebrochure/css/style.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Play:400,700">
+    <script src="~/ebrochure/js/jquery.js"></script>
+    <script src="~/ebrochure/js/turn.js"></script>
+    <script src="~/ebrochure/js/jquery.fullscreen.js"></script>
+    <script src="~/ebrochure/js/jquery.address-1.6.min.js"></script>
+    <script src="~/ebrochure/js/wait.js"></script>
+    <script src="~/ebrochure/js/onload.js"></script>
+
+
+    <!-- style css  -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: auto !important;
+            background: #000717;
+        }
+    </style>
+
+</head>
+<body ondragstart="return false" onselectstart="return false">
+    <div class="top_bar_link">
+        <a asp-action="Brochure">Problem Viewing?</a>
+    </div>
+
+    <!-- DIV YOUR WEBSITE -->
+    <div style="width:100%;margin:0 auto">
+
+        <!-- BEGIN FLIPBOOK STRUCTURE -->
+        <div id="fb5-ajax">
+            @RenderBody()
+    </div>
+    </div>
+</body>
+</html>
