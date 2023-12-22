@@ -1,14 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using VegasVacationVip.Models
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Welcome to Vegas Vacations VIP!</title>
-
-    <meta name="description" content="">
-    <meta name="robots" content="">
-    <link rel="canonical" href="" />
+    <title>@((ViewData["PageMetadata"] as PageMetadata)?.Title)</title>
+    <meta name="description" content="@((ViewData["PageMetadata"] as PageMetadata)?.Description)">
+    <link rel="canonical" href="@((ViewData["PageMetadata"] as PageMetadata)?.CanonicalUrl)">
+    <meta name="robots" content="index, follow">
 
     <link rel="shortcut icon" href="~/images/icon/favicon.ico">
 
