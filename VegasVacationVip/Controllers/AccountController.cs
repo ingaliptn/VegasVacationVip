@@ -83,7 +83,7 @@ namespace VegasVacationVip.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             }
 
-            return View(model);
+            return RedirectToAction("Home","Home", model);
         }
 
         [HttpPost]
