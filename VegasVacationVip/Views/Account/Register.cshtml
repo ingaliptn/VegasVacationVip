@@ -1,11 +1,12 @@
 ﻿@model VegasVacationVip.Models.RegisterModel
+
 @{
-    Layout = null;
+    ViewBag.Title = "Register";
 }
 
 <h2>Register</h2>
 
-<form asp-action="Register">
+<form asp-action="Register" method="post">
     <div class="form-group">
         <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control" />
@@ -23,3 +24,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

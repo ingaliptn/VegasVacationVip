@@ -6,7 +6,6 @@ using VegasVacationVip.DataContext;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -15,14 +14,23 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-
-builder.Services.AddControllersWithViews();
-
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
     options.AccessDeniedPath = "/Account/AccessDenied";
+    options.Events.OnRedirectToLogin = context =>
+    {
+        if (context.Request.Path.StartsWithSegments("/Home"))
+        {
+            context.Response.Redirect("https://www.google.com");
+            return Task.CompletedTask;
+        }
+        context.Response.Redirect(context.RedirectUri);
+        return Task.CompletedTask;
+    };
 });
+
+builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddScoped(typeof(HomeController));
@@ -42,6 +50,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();  // Enable authentication
 app.UseAuthorization();
 
 app.MapControllerRoute(name: "brochure",

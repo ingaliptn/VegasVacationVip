@@ -22,6 +22,23 @@ namespace VegasVacationVip.Controllers
             return View();
         }
 
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> Authenticate(string username, string password)
+        {
+            var result = await _signInManager.PasswordSignInAsync(username, password, false, lockoutOnFailure: false);
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+            else
+            {
+                return Unauthorized();
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterModel model)
         {
@@ -60,7 +77,7 @@ namespace VegasVacationVip.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Home", "Home");
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -73,7 +90,7 @@ namespace VegasVacationVip.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Home", "Home");
         }
     }
 }

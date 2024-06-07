@@ -1,4 +1,5 @@
 ﻿@using VegasVacationVip.Models
+@model VegasVacationVip.Models.LoginModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,8 @@
     <link href="~/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://kit-pro.fontawesome.com/releases/v6.5.1/css/pro.min.css" rel="stylesheet">
     <link href="~/css/animate.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 
     <!--[if lt IE 9]>
     <script src="~/js/html5shiv.js"></script>
@@ -29,6 +32,7 @@
 
     <link href="~/css/layout_style.css" rel="stylesheet" type="text/css">
     <link href="~/fonts/font_style.css" rel="stylesheet" type="text/css">
+    <link href="~/css/popup.css" rel="stylesheet" type="text/css">
 
 
     <script src="~/js/jquery.js"></script>
@@ -209,6 +213,43 @@
 </head>
 <!--/head-->
 <body>
+    @if (!User.Identity.IsAuthenticated)
+{
+    <!--modal for Authorization -->
+<div id="modalPopOverlay">
+	<div class="modalPopup">
+		<div class="headerBar">
+			<div class="modalBrand_logo"><img src="~/images/popup/logo.png" alt="Vegas Vacations"></div>
+		</div>
+		<div class="modalHeadLine">Authorization Required</div>
+		<div class="modalContent">
+        <form asp-controller="Account" asp-action="Login" method="post">
+
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</P>
+			<div class="authorizationForm">
+				<div class="formRowGroup">
+                    <label asp-for="Email">Username</label>
+                    <input asp-for="Email" id="username" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="formRowGroup">
+					<label>Password</label>
+                    <input asp-for="Password" id="password" name="password"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+			</div>
+			<button class="buttonStyle" type="submit" id="buttonAuth">Submit</button>
+        </form>
+
+		</div>
+	</div>
+</div>
+
+}
+
+
+
+
     <header class="header_part navbar-fixed-top">
 
         <div class="top_part">
@@ -245,8 +286,27 @@
                                 <li><a asp-controller="Home" asp-action="TravelShow">Travel Show</a></li>
                                 <li><a asp-controller="Home" asp-action="BuyNow">Buy Now</a></li>
                                 <li><a asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
-                                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
-                                <li><a asp-controller="Home" asp-action="ContactUs">Register</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+@*                                 <a asp-controller="Account" asp-action="Logout">Logout</a>
+ *@                                @* <form asp-controller="Account" asp-action="Logout" method="post">
+                                    <a><input type="submit" value=""/>Logout</a>
+                                </form> *@
+                                <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+    <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+</form>
+                            </li>
+                        }
+                        @* else
+                        {
+                            <li>
+                                <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                        } *@
                             </ul>
                         </nav>
                     </div>
@@ -349,6 +409,8 @@
     <script src="~/js/main.js"></script>
     <script src="~/js/wow.min.js"></script>
     <script src="~/js/responsiveslides.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <script class="secret-source">
         // You can also use "$(window).load(function() {"

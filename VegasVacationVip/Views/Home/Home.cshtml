@@ -1,4 +1,5 @@
 ﻿@using VegasVacationVip.Models
+@model VegasVacationVip.Models.LoginModel
 @{
     var metadata = new PageMetadata
             {
@@ -6,14 +7,10 @@
                 Description = "Get the best rate on your Las Vegas resort - Vegas Vacations VIP.",
                 CanonicalUrl = "https://vegasvacations.vip/"
             };
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@{
     ViewData["PageMetadata"] = metadata;
 }
+
 <section class="vegas_section_3 site_page_title">
     <div class="container">
         <div class="color_overlay_violet"></div>
@@ -198,7 +195,6 @@
 </section>
 
 
-
 <section class="vegas_section_2 site_page_title contact_info_title">
     <div class="container">
         <div class="color_overlay_red color_overlayPhone"></div>
@@ -208,7 +204,6 @@
         </div>
     </div>
 </section>
-
 
 
 <section class="vegas_section_3 site_page_title">
@@ -242,3 +237,4 @@
         </div>
     </div>
 </section>
+

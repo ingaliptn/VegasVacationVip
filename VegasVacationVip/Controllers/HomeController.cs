@@ -10,7 +10,7 @@ namespace VegasVacationVip.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
+        
         public IActionResult Home()
         {
             return View();
